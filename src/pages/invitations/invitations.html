@@ -1,0 +1,26 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title text-center>Invitations</ion-title>
+    <ion-buttons left>
+      <button ion-button icon-only (click)="goBack()">
+        X
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row *ngFor="let invitation of invitations">
+      <ion-col>
+        Pseudo : {{ invitation.sender.alias}}
+      </ion-col>
+      <ion-col>
+        <button class="button block" (click)="accept(invitation)">Accepter</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

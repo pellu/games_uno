@@ -1,0 +1,84 @@
+page-tictactoe {
+    ion-title {
+        font-size : 50%;
+    }
+    
+    .score-col {
+        text-align: center;
+    }
+    
+    .score_buttons-grid {
+        position: absolute;
+        width: 100%;
+        left: 0;
+    }
+    
+    .score_button {
+         background-color: color($colors, mycolor4);
+         border-radius: 6px;
+         height: 40px;
+         padding: 5px;
+         text-align: left;
+         font-weight: bolder;
+         color: white;
+         font-size: 110%;
+
+    }
+    .tictactoe-grid {
+        margin-top: 40%;
+        position: relative;
+        width: 280px;
+        margin-left: calc(50% - 140px);
+       
+    }
+    
+    .tictactoe-grid ion-row {
+        background-color: #BBAD9F;
+        height: 93px;
+    }
+    
+    .tictactoe-grid ion-row ion-col {
+        position: relative;
+        line-height: 170%;
+        font-size: 350%;
+    }
+
+    .tictactoe-grid ion-row ion-col span {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .x {
+        color: #FF1E1C;
+    }
+
+    .o {
+        color: color($colors, mycolor7);
+    } 
+    
+    #tictactoe-line-2 {
+        border-top: 2px solid white;
+        border-bottom: 2px solid white;
+    }
+    
+    .middle-col {
+        border-left: 2px solid white;
+        border-right: 2px solid white;
+    }
+    
+    .play-btn {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        opacity: 0;
+    }
+
+    #btn-search, #btn-invitations {
+        background-color: color($colors, mycolor4);
+        margin-top: 30px;
+    }
+}

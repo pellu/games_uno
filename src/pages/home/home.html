@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title text-center>Accueil</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding id="home-content">
+  <ion-grid class="home-grid">
+    <form>
+      <ion-item>    
+        <ion-input text-center type="text" [(ngModel)]="user.alias" name="name" placeholder="Pseudo"></ion-input>
+      </ion-item>
+      
+      <ion-item>    
+        <ion-input text-center type="text" [(ngModel)]="user.email" name="email" placeholder="Email (juste pour inscription)"></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-input text-center type="password" [(ngModel)]="password" name="password" placeholder="Mot de passe"></ion-input>
+      </ion-item>
+
+      <button id="btn-signup" ion-button block (click)="signUp()">S'inscrire</button>
+      <button id="btn-signin" ion-button block (click)="signIn()">Se connecter</button>
+    </form>
+    <p *ngIf="user.id">Connecté en tant que {{ user.alias }} !!</p>
+  </ion-grid>
+</ion-content>

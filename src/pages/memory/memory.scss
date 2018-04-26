@@ -1,0 +1,81 @@
+page-memory {
+    .bar-button-default-ios, .bar-button-default.bar-button-ios-default, .bar-button-clear-ios-default {
+        color: white;
+    }
+    .back-button-text {
+        display: none;
+    }
+
+    .col-img {
+        position: relative;
+        height: 80px;
+    }
+
+    .col-img-btn, .col-img-background {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+    }
+
+    .col-img-background {
+        height: 100%;
+    }
+
+    .col-img-btn {
+        height: 80px;
+    }
+
+    .img {
+        position: relative; 
+        display: block; /*for the img inside your div */  
+        z-index: 1;
+        min-height: 75px;
+    }
+    
+    .col-img-background, .img-not-visible {
+        text-align: center;
+        line-height: 350%;
+        font-size: 160%;
+        font-weight: bolder;
+        color : color($colors, mycolor6);
+        background-color: color($colors, mycolor4);
+        border: 2px solid white;
+    }
+
+    #btn-addCards {
+        background-color: color($colors, mycolor7);
+    }
+
+
+    #test-memoryCards-ctnr {
+        display: flex;
+        flex-wrap: wrap;
+        position: absolute;
+        width: 99%;
+        left: 0;
+
+    }
+
+    .test-card {
+        position: relative;
+        width: 24%;
+        margin-left: 1%; 
+        min-height: 85px;
+    }
+    .test-img {
+        position: relative; 
+        display: block; /*for the img inside your div */
+        min-height: 80px; 
+    }
+    .img-not-visible{
+        width: 100%; 
+        min-height: 85px; 
+    }
+
+    p {
+        position: absolute;
+        text-align: center;
+        bottom: -15px;
+    }
+}

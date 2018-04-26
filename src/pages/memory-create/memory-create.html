@@ -1,0 +1,24 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Ajouter un paquet de carte</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="card-background-page" padding>
+  
+  <ion-grid>   
+    <ion-row *ngFor="let card_row of cards">
+      <ion-col class="col-img" *ngFor="let card of card_row">
+        <div class="col-img-background">
+            Ajouter image
+            <img *ngIf="card.src"  class="img" id="img{{card.index}}" src="{{ card.src }}" alt="no card"/>
+            <button class="col-img-btn" (click)="addCard(card.index, cards.indexOf(card_row))"></button>
+        </div>  
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <button id="btn-addCards" ion-button block (click)="addCards()">Ajouter paquet</button>
+</ion-content>

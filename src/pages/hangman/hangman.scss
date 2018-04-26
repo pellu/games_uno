@@ -1,0 +1,14 @@
+page-hangman {
+    #btn-valide,
+    #btn-new {
+        background-color: color($colors, mycolor4);
+    }
+    #drawn {
+        width: 80%;
+        border: solid #000000 2px;
+        box-shadow: 3px 3px 0px #bbad9f;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom:12px;
+    }
+}

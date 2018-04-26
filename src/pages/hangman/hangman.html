@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Hangman</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-grid class="home-grid">
+
+    <ion-row>
+      <ion-col>
+        <div id="drawn" text-center *ngIf="joue === true">
+          <img src="{{ pendu }}" *ngIf="tentative < 11 && tentative > 0"/>
+        </div>
+        <div id="lettres" text-center *ngIf="joue === true">
+          <span>Lettres utilisées : </span>
+          <span *ngFor="let lettre of lettreDejaJouee"> 
+            <span *ngIf="lettre.trouve === false" class="red"> {{ lettre.valeur }} </span>
+            <span *ngIf="lettre.trouve === true" class="green"> {{ lettre.valeur }} </span>
+          </span>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="partieTerminee === true">
+      <ion-col>
+        <ion-item>
+          <div id="mot" text-center>
+            <span *ngFor="let lettre of lettres">
+              <span *ngIf="lettre.trouve === false"> _ </span>
+              <span *ngIf="lettre.trouve === true">{{ lettre.valeur }}</span>
+            </span>
+          </div>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-input text-center [(ngModel)]="lettreEntree" type="text" placeholder="Votre lettre" maxlength="1"></ion-input>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <button id='btn-new' ion-button block (click)="newGame()">Nouvelle partie</button>
+      </ion-col>
+      <ion-col>
+        <button id='btn-valide' ion-button block (click)="jeu()">Validez</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

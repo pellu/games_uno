@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Memory</ion-title>
+    
+    <ion-buttons end>
+      <button ion-button icon-only (click)="presentActionSheet()">
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    
+    <ion-grid *ngIf="cards.length < 10">   
+      <ion-row *ngFor="let card_row of emptyCards">
+        <ion-col class="col-img" *ngFor="let card of card_row">
+          <div class="col-img-background">
+              ?
+          </div>   
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <div id="test-memoryCards-ctnr">
+      <div *ngFor="let card of cards" class="test-card">
+        <img *ngIf="card.isVisible" class="test-img" src="{{ card.src }}" alt="none"/>
+        <div *ngIf="!card.isVisible" class="img-not-visible">
+            {{ card.index }}
+        </div>
+        <button *ngIf="card.src" id="{{ card.index }}" class="col-img-btn" (click)="clickCard(card)"></button>
+      </div>
+    </div>
+
+    <p *ngIf="cards.length > 10">
+      Cartes gagnées: {{ cardsWon }}/20    |     Essais restants: {{ attemptsLeft }}
+    </p>
+</ion-content>

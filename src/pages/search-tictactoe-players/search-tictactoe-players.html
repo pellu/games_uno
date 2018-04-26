@@ -1,0 +1,28 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title text-center>SearchTictactoePlayers</ion-title>
+    <ion-buttons left>
+      <button ion-button icon-only (click)="goBack()">
+        X
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row *ngFor="let player of players">
+      <ion-col>
+        Nom : {{ player.alias }}
+      </ion-col>
+      <ion-col>
+        <button block (click)="invite(player)">>Inviter</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
